@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FinalFunction(fin, fout);
+    FinalFunctionUpgraded(fin, fout);
 
     fin.close();
     fout.close();

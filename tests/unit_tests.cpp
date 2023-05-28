@@ -179,3 +179,45 @@ TEST(UnitTestForFinalFunction, MultipleSpacesBetweenWords) {
 TEST(UnitTestForFinalFunction, SpecialCharactersAsWords) {
     CommonTest("!@#$%^&*()", "", FinalFunction);
 }
+
+
+
+TEST(UnitTestForFinalFunctionUpgraded, EmptyFile) {
+    CommonTest("", "", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, NoWords) {
+    CommonTest("123 !@#$%", "", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, SingleWord) {
+    CommonTest("Hello", "1 hello", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, MultipleOccurrences) {
+    CommonTest("hello world hello hello", "3 hello\n1 world", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, MixedCase) {
+    CommonTest("Hello WoRld! This is a TeSt. Hello WORLD", "2 hello\n2 world\n1 a\n1 is\n1 test\n1 this", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, CaseInsensitive) {
+    CommonTest("Hello hello HELLO", "3 hello", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, MixedSymbolsAndWords) {
+    CommonTest("Hello@W0rld! This#is_a_TeSt. Hello WORLD", "2 hello\n1 a\n1 is\n1 rld\n1 test\n1 this\n1 w\n1 world", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, NumbersInWords) {
+    CommonTest("hello12 world123 hello12", "2 hello\n1 world", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, MultipleSpacesBetweenWords) {
+    CommonTest("hello      world   hello", "2 hello\n1 world", FinalFunctionUpgraded);
+}
+
+TEST(UnitTestForFinalFunctionUpgraded, SpecialCharactersAsWords) {
+    CommonTest("!@#$%^&*()", "", FinalFunctionUpgraded);
+}

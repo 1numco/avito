@@ -116,7 +116,6 @@ struct Pipeline
                           std::pair<const std::string, int>>>>>
     static void SimpleRun(std::istream &fin, std::ostream &fout, Method frequencies_exctraction_method)
     {
-        TimeMeasurer tm;
         auto words = extract_words(fin);
         auto friquencies = frequencies_exctraction_method(words);
         write_dict(fout, friquencies);

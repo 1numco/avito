@@ -149,3 +149,24 @@ TEST(FunctionalTestForFinalFunction, MiddleSizeFile) {
 TEST(FunctionalTestForFinalFunction, LargeFile) {
     CommonTest("large", check_on_equal, FinalFunction);
 }
+
+
+TEST(FunctionalTestForFinalFunctionUpgraded, EmptyFile) {
+    CommonTest("empty",  check_on_empty, FinalFunctionUpgraded);
+}
+
+TEST(FunctionalTestForFinalFunctionUpgraded, RussianFile) {
+    CommonTest("russian",  check_on_empty,  FinalFunctionUpgraded);
+}
+
+TEST(FunctionalTestForFinalFunctionUpgraded, SmallFile) {
+    CommonTest("small", check_on_equal, FinalFunctionUpgraded);
+}
+
+TEST(FunctionalTestForFinalFunctionUpgraded, MiddleSizeFile) {
+    CommonTest("middle", check_on_equal, FinalFunctionUpgraded);
+}
+
+TEST(FunctionalTestForFinalFunctionUpgraded, LargeFile) {
+    CommonTest("large", check_on_equal, FinalFunctionUpgraded);
+}
